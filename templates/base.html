@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendors/owl-carousel/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendors/owl-carousel/css/owl.theme.default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendors/aos/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.min.css') }}">
+    {% block head %} {% endblock %}
+</head>
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100" height="100vw">
+
+    <header id="header-section">
+        <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" style="background-color: black; padding: 0;width: 100%;" id="navbar">
+          <div class="container">
+            <div class="navbar-brand-wrapper d-flex w-100">
+              <img src="{{ url_for('static',filename='images/logo.png') }}" alt="" style="height: 60px;">
+              <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="mdi mdi-menu navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-menu-wrapper" id="navbarSupportedContent">
+              <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
+                <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
+                  <div class="navbar-collapse-logo">
+                    <img src="{{ url_for('static',filename='images/logo.png') }}" alt="" style="height: 60px;">
+                  </div>
+                  <button class="navbar-toggler close-button" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
+                  </button>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#header-section">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#features-section">Service</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#digital-marketing-section">Service</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#feedback-section">Testimonials</a>
+                </li> -->
+                <li class="nav-item btn-contact-us pl-4 pl-lg-0">
+                    <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#Login" >LogIn</a>
+                  <!-- <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Contact Us</button> -->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    {% block body %} {% endblock %}
+
+    <script src="{{ url_for('static',filename='vendors/jquery/jquery.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static',filename='vendors/bootstrap/bootstrap.min.js') }}"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='vendors/owl-carousel/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendors/aos/js/aos.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/landingpage.js') }}"></script>
+</body>
+
+</html>
