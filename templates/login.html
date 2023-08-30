@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>
+  Login
+</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="row">
+
+  <div class="col-6 d-none d-lg-block p-3">
+    <h2 class="text-center"><span class="fw-bold">Welcome</span> to Sidekick</h2>
+    <img src="{{url_for('static', filename='/Images/login.jpg')}}" style="width: 100%; height: auto; object-fit: fill;">
+  </div>
+
+  <div class="col p-3">
+    <br>
+    <div class="h5 text-center">Login</div>
+    <br>
+    <form action="{{ url_for('login') }}" method="post">
+      <div class="input-group mb-3">
+        <input type="username" name="username" class="form-control" placeholder="Username" aria-label="Username">
+      </div>
+      <div class="input-group mb-3">
+        <input type="password" name="password" class="form-control" placeholder="Password" aria-label="password">
+      </div>
+      <br>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-lg" type="submit">Login</button>
+      </div>
+      <br>
+      <p class="bottom text-center">Don't have an account? <a class="bottom text-primary" href="{{url_for('register')}}"> Sign Up here</a></p>
+      <br>
+      <div class="text-center">{{ msg }}</div>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

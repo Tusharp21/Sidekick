@@ -207,7 +207,7 @@
             <div class="card-body">
               <div class="text-center">
                 <!-- <img src="images/face3.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="86" height="86" src="https://img.icons8.com/clouds/100/sedan.png" alt="sedan"/>
+                <img width="66" height="66" src="https://img.icons8.com/clouds/100/sedan.png" alt="sedan"/>
                 <p class="m-0 py-3 text-muted">Self Driving Car can be future, Using Artificial Neural Networ Algorithm we Created Self Driving Software.</p>
                 <div class="content-divider m-auto"></div>
                 <h6 class="card-title pt-3">Self Driving Automobile</h6>
@@ -255,7 +255,7 @@
             <div class="card-body">
               <div class="text-center">
                 <!-- <img src="images/face1.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="46" height="46" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9.png" alt="external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9"/>
+                <img width="66" height="66" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9.png" alt="external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9"/>
                 <p class="m-0 py-3 text-muted">Food Delivery Web app developed in HTML and Bootstrap with Amazing CSS and java script integration.</p>
                 <div class="content-divider m-auto"></div>
                 <h6 class="card-title pt-3">Foodie India</h6>
@@ -292,7 +292,7 @@
               <div class="text-center">
                 <!-- <img src="images/face20.jpg" width="89" height="89" alt="" class="img-customer"> -->
                 <img width="66" height="66" src="https://img.icons8.com/fluency/96/organic-food.png" alt="organic-food"/>
-                <p class="m-0 py-3 text-muted">Optimizing cultivation through tech for efficient, sustainable, and profitable agricultural management solutions.</p>
+                <p class="m-0 py-3 text-muted">Optimizing cultivation through tech for efficient, sustainable, and profitable Agricultural Management.</p>
                 <div class="content-divider m-auto"></div>
                 <h6 class="card-title pt-3">Agricultural Management</h6>
                 <h6 class="customer-designation text-muted m-0">Web Devlopment</h6>
@@ -396,97 +396,4 @@
     </div>
   </div>
 </div>
-
-
-<!-- ====== Login Modal ====== -->
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Login">
-    Launch demo modal 0
-  </button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-body text-center">
-
-        <div class="row">
-
-          <div class="col-6 d-none d-lg-block p-3">
-            <h2><span class="fw-bold">Welcome</span> to Sidekick</h2>
-            <img src="{{url_for('static', filename='/Images/login.jpg')}}"
-              style="width: 100%; height: auto; object-fit: fill;">
-          </div>
-
-          <div class="col p-3">
-            <br>
-            <div class="h5 text-center">Login With OTP</div>
-            <br>
-            <form action="{{ url_for('home')}}" method="post">
-            <div class="input-group mb-3">
-              <input type="tel" name="phone" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
-            </div>
-            <br>
-            <div class="d-grid gap-2">
-              <button class="btn btn-primary btn-lg" type="submit" data-bs-toggle="modal"
-                data-bs-target="#verify">Generate OTP</button>
-            </div>
-          </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End Login Modal -->
-
-<!-- ====== Verify Modal ====== -->
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verify">
-    Launch demo modal verify
-  </button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="verify" tabindex="-1" aria-labelledby="verifyLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-body text-center">
-
-        <div class="row">
-
-          <div class="col-6 d-none d-lg-block p-3">
-            <h2><span class="fw-bold">Welcome</span> to Sidekick</h2>
-            <img src="{{url_for('static', filename='/Images/login.jpg')}}"
-              style="width: 100%; height: auto; object-fit: fill;"></img>
-          </div>
-
-          <div class="col p-3">
-            <br>
-            <div class="h3 text-center">Verify OTP</div>
-            <br>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Enter OTP" aria-label="Enter OTP">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Name" aria-label="Name">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="E-mail ID" aria-label="E-mail ID">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Address" aria-label="Address">
-            </div>
-            <br>
-            <div class="d-grid gap-2 col-6 mx-auto p-0">
-              <button class="btn btn-primary" type="button">Proceed</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End Verify Modal -->
 {% endblock %}

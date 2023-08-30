@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>
+    Register User
+</title>
+{% endblock %}
+
+
+{% block body %}
+<form action="{{ url_for('register') }}" method="POST">
+    <div class="row">
+        <div class="col-6 d-none d-lg-block p-3">
+            <h2 class="text-center"><span class="fw-bold">Welcome</span> to Sidekick</h2>
+            <img src="{{ url_for('static', filename='/Images/login.jpg') }}"
+                style="width: 100%; height: auto; object-fit: fill;">
+        </div>
+        <div class="col p-3">
+            <br>
+            <div class="h3 text-center">Register</div>
+            <br>
+            <div class="input-group mb-3">
+                <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username">
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" name="password" class="form-control" placeholder="Password"
+                    aria-label="password">
+            </div>
+            <div class="input-group mb-3">
+                <input type="email" name="email" class="form-control" placeholder="E-mail ID" aria-label="E-mail ID">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="fname" class="form-control" placeholder="First Name" aria-label="First Name">
+
+                <input type="text" name="lname" class="form-control" placeholder="Last Name" aria-label="Last Name">
+            </div>
+            <div class="input-group mb-3">
+                <input type="tel" name="phone" class="form-control" placeholder="Phone Numeber"
+                    aria-label="Phone Numeber">
+            </div>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto p-0">
+                <button type="submit" class="btn btn-primary">Proceed</button>
+            </div>
+            <br>
+            <p class="bottom text-center">Already have an account?  <a class="bottom text-primary" href="{{url_for('login')}}"> Sign In here</a></p>
+            <br>
+            <div class="text-center">{{ msg }}</div>
+        </div>
+    </div>
+</form>
+{% endblock %}
