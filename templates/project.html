@@ -2,11 +2,33 @@
 
 {% block head %}
 <title>
-    Appointment Genetaor
+    Projects 📚
 </title>
 {% endblock %}
 
-
 {% block body %}
 
+<div class="content-wrapper">
+    <div class="container">
+        <h2>Project List</h2>
+        {% for file in files %}
+        <a href="{{ url_for('payment_gateway', filename=file) }}">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{url_for('static', filename='/Images/rar.jpg')}}" class="img-fluid rounded-start"
+                            alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ file }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+</div>
 {% endblock %}

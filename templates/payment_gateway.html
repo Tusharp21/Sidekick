@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>
+    Payment Gateway
+</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Modal -->
+        <h2> Payment Details </h2>
+        <div class="modal-body">
+            <div class="card rounded-3">
+                <div class="card-body">
+                    <!-- <div>
+                        <img src="{{url_for('static', filename='/Images/logo.png')}}" width="200px" height="auto">
+                    </div> -->
+                    <div class="row">
+                        <!-- Qrcode -->
+                        <div class="col rounded border border-success p-3">
+                            <a href="{{ phonepe_url }}" href_data="{{ phonepe_url }}" id="price_modal_phonepe"
+                                class="btn p-3 mb-2 fs-2  ">
+                                <img src="{{url_for('static', filename='/Images/qrcode.jpeg')}}"
+                                    style="width: 100%; height: 100%; object-fit: fill; ">
+                                </img>
+                                <h5> Click here to Pay Using QR Code</h5>
+                            </a>
+                        </div>
+
+                        <!-- phone-pe -->
+                        <div class="col rounded border border-success p-3">
+                            <a href="{{ phonepe_url }}" href_data="{{ phonepe_url }}" id="price_modal_phonepe"
+                                class="btn p-3 mb-2 fs-2  ">
+                                <img src="{{url_for('static', filename='/Images/phone-pay.png')}}"
+                                    style="width: 100%; height: 100%; object-fit: fill; ">
+                                </img>
+                                <h5> Click here to Pay Using Phonepay</h5>
+                            </a>
+                        </div>
+
+                        <!-- UPI -->
+                        <div class="col rounded border border-success p-3">
+                            <a href="{{ upi_url }}" href_data="{{ upi_url }}" id="price_modal_other"
+                                class="btn p-3 mb-2 fs-2 ">
+                                <img src="{{url_for('static', filename='/Images/UPI-logo.jpg')}}"
+                                    style="width: 100%; height: 100%; object-fit: fill;">
+                                </img>
+                                <h5>Click here to Pay Using Other UPI</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p>*After a successful submission of the screenshot, you will get response within 24 hours</p>
+                <div class="">
+                    <p>UPI-ID -> <b>7587140713@oksbi</b></p>
+                </div>
+                <!-- form for screenshot upload  -->
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="d-flex flex-column " style="font-size: 2rem;">
+                        <input class="form-control p-3" type="file" name="image" id="image" accept="image/*" required>
+                        <p for="formFile" class="mb-2 form-label text-center upload_msg text-danger">* Upload a Payment Screenshot here After a Successful Payment</p>
+                    </div>
+                    <center>
+                        <button type="submit" class="btn btn-success mb-5 btn-lg final_submit" value="Upload">Submit</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

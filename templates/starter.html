@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>
+  Welcome, Let's Start 💻
+</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="" style="background-color: #f7f8fa;">
+  <div class="container-fluid m-0 ">
+    <h1 class="text-center fw-bold h1 pt-4"> SELECT YOUR TYPE </h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 p-3">
+      <div class="col p-4">
+        <div class="card h-100">
+          <a href="{{ url_for('project') }}">
+            <div class="align-self-center">
+              <img src="{{url_for('static', filename='Images/student.gif')}}" class="card-img-top"
+                style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Student's Minor/Major Projects</h5>
+              <p class="card-text">Empower your academic journey with cutting-edge software solutions and our
+                minor and major project opportunities.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col p-4">
+        <div class="card h-100">
+          <a href="{{ url_for('contact') }}">
+            <div class="align-self-center">
+              <img src="{{url_for('static', filename='/Images/selfemployee.gif')}}" class="card-img-top"
+                style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Company Projects</h5>
+              <p class="card-text">Automate your business with our cutting-edge software solutions.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col p-4">
+        <div class="card h-100">
+          <a href="{{ url_for('contact') }}">
+            <div class="align-self-center">
+              <img src="{{url_for('static', filename='/Images/computeremployee.gif')}}" class="card-img-top" alt="..."
+                style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Personal Projects</h5>
+              <p class="card-text"> empowering you to transform your personal projects into extraordinary achievements.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div><a href=" {{ url_for('logout') }} ">Logout</a></div> -->
+{% endblock %}

@@ -13,7 +13,7 @@
     <h6 class="font-weight-normal text-muted pb-3">Unlocking Possibilities: Your All-in-One Software Solution with
       Innovative Design to Overcome Every Obstacle.</h6>
     <div>
-      <button class="btn btn-opacity-light mr-1" data-bs-toggle="modal" data-bs-target="#Login">Get started</button>
+      <a href="{{ url_for('starter') }}"><button class="btn btn-opacity-light mr-1" >Get started</button></a>
       <button class="btn btn-opacity-success ml-1">Learn more</button>
     </div>
     <img src="{{url_for('static', filename='/Images/Group171.svg')}}" alt="" class="img-fluid">
@@ -309,60 +309,12 @@
           <h4 class="pt-1" data-aos="fade-down">Contact us</h4>
         </div>
         <div data-aos="fade-up">
-          <button class="btn btn-rounded btn-outline-danger">Contact us</button>
+          <a href="{{ url_for('contact') }}"><button class="btn btn-rounded btn-outline-danger">Contact us</button>
         </div>
       </div>
     </section>
-    <section class="contact-details" id="contact-details-section">
-      <div class="row text-center text-md-left">
-        <div class="col-12 col-md-6 col-lg-3 grid-margin">
-          <img src="images/Group2.svg" alt="" class="pb-2">
-          <div class="pt-2">
-            <p class="text-muted m-0">harshitsahu.hs66@gmail.com</p>
-            <p class="text-muted m-0">758-714-0713</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 grid-margin">
-          <h5 class="pb-2">Get in Touch</h5>
-          <p class="text-muted">Don’t miss any updates of our new templates and extensions.!</p>
-          <form>
-            <input type="text" class="form-control" id="Email" placeholder="Email id">
-          </form>
-          <div class="pt-3">
-            <button class="btn btn-dark">Subscribe</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 grid-margin">
-          <h5 class="pb-2">Our Guidelines</h5>
-          <a href="#">
-            <p class="m-0 pb-2">Terms</p>
-          </a>
-          <a href="#">
-            <p class="m-0 pt-1 pb-2">Privacy policy</p>
-          </a>
-          <a href="#">
-            <p class="m-0 pt-1 pb-2">Cookie Policy</p>
-          </a>
-          <a href="#">
-            <p class="m-0 pt-1">Discover</p>
-          </a>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 grid-margin">
-          <h5 class="pb-2">Our address</h5>
-          <p class="text-muted">882 Ward 21<br>Titurdih Durg (CG) India</p>
-          <div class="d-flex justify-content-center justify-content-md-start">
-            <a href="#"><span class="mdi mdi-facebook"></span></a>
-            <a href="#"><span class="mdi mdi-twitter"></span></a>
-            <a href="#"><span class="mdi mdi-instagram"></span></a>
-            <a href="#"><span class="mdi mdi-linkedin"></span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="border-top">
-      <p class="text-center text-muted pt-4">Copyright © 2023<a href=""
-          class="px-1">Sidekick</a>All rights reserved.</p>
-    </footer>
+    
+
     <!-- Modal for Contact - us Button -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">

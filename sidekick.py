@@ -25,7 +25,50 @@ def home():
 
 @app.route("/project")
 def project():
-    return render_template('project.html')
+
+    project_folder = 'project_folder'  # Replace with the actual folder name
+    file_list = os.listdir(project_folder)
+
+    return render_template('project.html', files=file_list)
+
+
+@app.route("/payment_gateway")
+def payment_gateway():
+    pa = "7587140713@paytm"
+    pn = "Sidekick"
+    cu = "INR"
+    tn = "Sidekick Project"
+    tr = ""
+    am = "2500"
+
+    phonepe_url = f"phonepe://pay?pa={pa}&pn={pn}&cu={cu}&tn={tn}&tr={tr}&am={am}"
+    upi_url = f"upi://pay?pa={pa}&pn={pn}&cu={cu}&tn={tn}&tr={tr}&am={am}"
+
+    return render_template('payment_gateway.html', phonepe_url=phonepe_url, upi_url=upi_url)
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'image' in request.files:
+        file = request.files['image']
+
+        if file.filename != '':
+            custom_file_name = "example_filename"  # Replace with your desired custom file name
+            target_directory = app.config['UPLOAD_FOLDER']
+            target_path = os.path.join(target_directory, f"{custom_file_name}.png")
+
+            file.save(target_path)
+
+            return "File uploaded successfully."
+    
+    return "Error uploading file."
+
+@app.route("/starter")
+def starter():
+    return render_template('starter.html')
+
+@app.route("/contact")
+def contact():
+    return render_template('contact.html')
 
 @app.route("/dashboard")
 def dashboard():
