@@ -25,10 +25,8 @@ def home():
 
 @app.route("/project")
 def project():
-
     project_folder = 'project_folder'  # Replace with the actual folder name
     file_list = os.listdir(project_folder)
-
     return render_template('project.html', files=file_list)
 
 
