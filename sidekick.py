@@ -30,7 +30,6 @@ def home():
 def admin():
     return render_template('admin_panel.html')
 
-
 @app.route("/project")
 def project():
     if session.get('loggedin'):
@@ -93,9 +92,22 @@ def upload_file():
 def starter():
     return render_template('starter.html')
 
-@app.route("/contact")
+@app.route("/contact", methods =['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    msg = ''
+    if request.method == 'POST' and 'name' in request.form and 'email' in request.form and 'phone' in request.form and 'project' in request.form and 'message' in request.form:
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        project = request.form['project']
+        message = request.form['message']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO customer VALUES (NULL, %s, %s, %s, %s, %s, %s)', (name, phone, email, message, project, 'Yet to Contact', ))
+        mysql.connection.commit()
+        msg = 'We Got Your Message in successfully! We will Contact you as soon as possible.' 
+        return render_template('contact.html', msg = msg)
+    else:    
+        return render_template('contact.html')
 
 @app.route("/internship")
 def internship():

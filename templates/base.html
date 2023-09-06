@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{ url_for('static',filename='vendors/aos/css/aos.css') }}" />
   <link rel="stylesheet" href="{{ url_for('static',filename='css/style.min.css') }}" />
   {% block head %} {% endblock %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="100" height="100vw">
@@ -127,6 +128,7 @@
   <script src="{{ url_for('static',filename='vendors/owl-carousel/js/owl.carousel.min.js') }}"></script>
   <script src="{{ url_for('static',filename='vendors/aos/js/aos.js') }}"></script>
   <script src="{{ url_for('static',filename='js/landingpage.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='js/AJAX.js') }}"></script> <!-- AJAX Script from static\js\AJAX.js-->
 </body>
 
 </html>

@@ -10,7 +10,9 @@
 
 <div class="content-wrapper"  style="background-color: rgb(255, 255, 255);">
 <div class="container-xl mb-5 mt-2">
-    <h2 class="text-center fw-bold"> CONTACT US </h2>
+    <h2 class="text-center fw-bold p-2"> CONTACT US </h2>
+
+    <h2>{{msg}}</h2>
     <div class="row">
         <div class="col align-self-center">
             <div class="card rounded-3 m-5" style="width: auto; background-color: #d268cc ;">
@@ -70,7 +72,7 @@
                 <img src="{{ url_for('static', filename='/Images/contact.jpg') }}"
                     style="width: auto; max-width: 300px; height: auto; max-height: 400px;">
             </div>
-            <form>
+            <form action="{{ url_for('contact') }}" method="POST">
                 <div class="input-group mb-3">
                     <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Name">
                 </div>
@@ -80,16 +82,28 @@
                     <input type="text" name="phone" class="form-control" placeholder="Phone Number"
                         aria-label="Phone Number">
                 </div>
+                <div class="input-group">  
+                    <div class="form-group">
+                        <select class="form-control" id="websiteType" name="project" placeholder="Choose a Website Type" aria-placeholder="Choose a Website Type">
+                            <option value="personal">Personal Website</option>
+                            <option value="blog">Blog</option>
+                            <option value="e-commerce">E-commerce</option>
+                            <option value="portfolio">Portfolio</option>
+                            <option value="portfolio">Others</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+                
                 <div class="input-group mb-3">
                     <textarea type="text" name="message" class="form-control" placeholder="Message"
                         aria-label="Message"></textarea>
                 </div>
                 <br>
                 <div class="d-grid gap-2 col-6 mx-auto p-0">
-                    <button type="submit" class="btn btn-primary">Proceed</button>
+                    <button id="submitbutton" type="submit" class="btn btn-primary">Proceed</button>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
