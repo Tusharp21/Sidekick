@@ -209,9 +209,8 @@ def login():
             session['email'] = account['email'] 
             session['internship_type'] = account['internship']  #defines interns and their type in dashboard
             session['git_link'] = account['task_status']
-            session['image'] = account['image']
             # msg = 'Logged in successfully !' 
-            return render_template('home.html')
+            return redirect(url_for('home'))
         else:
             msg = 'Incorrect username / password !'
             return render_template('login.html', msg = msg)
@@ -243,7 +242,7 @@ def register():
         cursor.execute('SELECT * FROM accounts WHERE username = % s', (username, ))
         account = cursor.fetchone()
         if account:
-            msg = 'Account already exists !'
+            msg = 'Account already exists ! \n Try a different Username'
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             msg = 'Invalid email address !'
         elif not re.match(r'[A-Za-z0-9]+', username):
@@ -251,7 +250,7 @@ def register():
         elif not username or not password or not email:
             msg = 'Please fill out the form !'
         else:
-            cursor.execute('INSERT INTO accounts VALUES (NULL, % s, % s, % s, % s, % s, % s)', (username, password, email, first_name, last_name, phone,))
+            cursor.execute('INSERT INTO accounts VALUES (NULL, % s, % s, % s, % s, % s, % s, NULL, NULL)', (username, password, email, first_name, last_name, phone,))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
