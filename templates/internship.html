@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>
+  Admin panel
+</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="container-sm">
+  <div class="">
+    <h2 class="p-lg-4 text-center fw-bold">WELCOME TO SIDEKICK INTERNSHIP PROGRAM</h2>
+    <div class="row">
+      <div class="col-4 text-center">
+        <img src="{{url_for('static', filename='/Images/intern1.jpg')}}" style="width: 300px; height: auto;">
+      </div>
+      <div class="col-8">
+        <h4 class="fw-bold p-3">WEB DEVLOPMENT INTERNSHIP</h4>
+        <p class="fs-6 p-0 m-0">Join our paid internship program in web development and machine learning to gain
+          hands-on experience
+          in cutting-edge technologies. As a software company dedicated to innovation, we offer mentorship,
+          competitive compensation, and networking opportunities. You'll learn web development, including
+          front-end and back-end, HTML, CSS, JavaScript, and popular frameworks.
+          <br>
+          <br>
+          Whether you're a recent graduate ready to kickstart your career or someone looking to transition
+          into the tech industry, our program is open to passionate individuals from all backgrounds. Join us,
+          and let's together shape the future of technology.
+
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-8">
+        <h4 class="fw-bold p-3">MACHINE LEARNING INTERNSHIP</h4>
+        <p class="fs-6">
+          But that's not all! Our internship extends beyond web development into the exciting field of machine
+          learning. You'll explore data analysis, supervised and unsupervised learning, delve into the depths
+          of neural networks, and gain hands-on experience in implementing real-world machine learning
+          projects.
+          <br>
+          <br>
+          In machine learning, you'll delve into data analysis,
+          supervised and unsupervised learning, deep learning, and more. Whether you're a recent graduate or
+          career changer, our
+          program is open to all tech enthusiasts. Don't miss this chance to accelerate your career and shape
+          the
+          future of technology with us at Sidekick. Apply now!
+        </p>
+      </div>
+      <div class="col-4 text-center">
+        <img src="{{url_for('static', filename='/Images/intern2.jpg')}}" style="width: 300px; height: auto;">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="text-center" width="100%">
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Web Devlopment</h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mb-4">
+                <li>Weekly Task Assigning</li>
+                <li>Experience Certificate</li>
+                <li>Phone and email support</li>
+                <li>Online Community</li>
+              </ul>
+              <form action="{{ url_for('dashboard') }}" method="POST">
+                <input name="internship_type" value="webdevlopment" hidden></input>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Apply Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Machine Learning</h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mb-4">
+                <li>Weekly Task Assigning</li>
+                <li>Experience Certificate</li>
+                <li>Phone and email support</li>
+                <li>Online Community</li>
+              </ul>
+              <form action="{{ url_for('dashboard') }}" method="POST">
+                <input name="internship_type" value="webdevlopment" hidden></input>
+                <button type="button" class="w-100 btn btn-lg btn-primary" disabled>Apply Now</button>
+              </form>
+
+              <br>
+              <p class="text-danger">Currently not taking interns</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="bg-primary" style="height: 10px; width: 100%;">
+</div>>
+{% endblock %}

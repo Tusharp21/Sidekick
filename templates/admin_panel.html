@@ -9,6 +9,33 @@
 
 {% block body %}
 
- 
+<div class="content-wrapper">
+    <div class="container">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-accounts-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-accounts" type="button" role="tab" aria-controls="nav-accounts"
+                    aria-selected="true">Accounts</button>
+                <button class="nav-link" id="nav-customer-tab" data-bs-toggle="tab" data-bs-target="#nav-customer"
+                    type="button" role="tab" aria-controls="nav-customer" aria-selected="false">Customers</button>
+                <button class="nav-link" id="nav-internshit-tab" data-bs-toggle="tab" data-bs-target="#nav-internshit"
+                    type="button" role="tab" aria-controls="nav-internshit" aria-selected="false">Internship</button>
+                <button class="nav-link" id="nav-projects-tab" data-bs-toggle="tab" data-bs-target="#nav-projects"
+                    type="button" role="tab" aria-controls="nav-projects" aria-selected="false">Projects</button>
+                <button class="nav-link" id="nav-purchases-tab" data-bs-toggle="tab" data-bs-target="#nav-purchases"
+                    type="button" role="tab" aria-controls="nav-purchases" aria-selected="false">Purchases</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-accounts" role="tabpanel" aria-labelledby="nav-accounts-tab">
+                ...</div>
+            <div class="tab-pane fade" id="nav-customer" role="tabpanel" aria-labelledby="nav-customer-tab">...</div>
+            <div class="tab-pane fade" id="nav-internship" role="tabpanel" aria-labelledby="nav-internship-tab">...
+            </div>
+            <div class="tab-pane fade" id="nav-projects" role="tabpanel" aria-labelledby="nav-projects-tab">...</div>
+            <div class="tab-pane fade" id="nav-purchases" role="tabpanel" aria-labelledby="nav-purchases-tab">...</div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

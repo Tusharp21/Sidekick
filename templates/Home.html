@@ -13,7 +13,7 @@
     <h6 class="font-weight-normal text-muted pb-3">Unlocking Possibilities: Your All-in-One Software Solution with
       Innovative Design to Overcome Every Obstacle.</h6>
     <div>
-      <a href="{{ url_for('starter') }}"><button class="btn btn-opacity-light mr-1" >Get started</button></a>
+      <a href="{{ url_for('starter') }}"><button class="btn btn-opacity-light mr-1">Get started</button></a>
       <button class="btn btn-opacity-success ml-1">Learn more</button>
     </div>
     <img src="{{url_for('static', filename='/Images/Group171.svg')}}" alt="" class="img-fluid">
@@ -25,14 +25,16 @@
       <div class="row grid-margin">
         <div class="col-12 text-center pb-5">
           <h2>Our Prime Services</h2>
-          <h6 class="section-subtitle text-muted">We Belive in Creating, Quality Product that add Value to your Business.</h6>
+          <h6 class="section-subtitle text-muted">We Belive in Creating, Quality Product that add Value to your
+            Business.</h6>
         </div>
         <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
           <div class="card color-cards">
             <div class="card-body p-0">
               <div class="bg-primary text-center card-contents">
                 <div class="card-image">
-                  <img src="{{ url_for('static', filename='images/Group95.svg') }}" class="case-studies-card-img" alt="">
+                  <img src="{{ url_for('static', filename='images/Group95.svg') }}" class="case-studies-card-img"
+                    alt="">
                 </div>
                 <div class="card-desc-box d-flex align-items-center justify-content-around">
                   <div>
@@ -53,7 +55,8 @@
             <div class="card-body p-0">
               <div class="bg-warning text-center card-contents">
                 <div class="card-image">
-                  <img src="{{ url_for('static', filename='images/Group108.svg') }}" class="case-studies-card-img" alt="">
+                  <img src="{{ url_for('static', filename='images/Group108.svg') }}" class="case-studies-card-img"
+                    alt="">
                 </div>
                 <div class="card-desc-box d-flex align-items-center justify-content-around">
                   <div>
@@ -74,7 +77,8 @@
             <div class="card-body p-0">
               <div class="bg-violet text-center card-contents">
                 <div class="card-image">
-                  <img src="{{ url_for('static', filename='images/Group126.svg') }}" class="case-studies-card-img" alt="">
+                  <img src="{{ url_for('static', filename='images/Group126.svg') }}" class="case-studies-card-img"
+                    alt="">
                 </div>
                 <div class="card-desc-box d-flex align-items-center justify-content-around">
                   <div>
@@ -95,7 +99,8 @@
             <div class="card-body p-0">
               <div class="bg-success text-center card-contents">
                 <div class="card-image">
-                  <img src="{{ url_for('static', filename='images/Group115.svg') }}" class="case-studies-card-img" alt="">
+                  <img src="{{ url_for('static', filename='images/Group115.svg') }}" class="case-studies-card-img"
+                    alt="">
                 </div>
                 <div class="card-desc-box d-flex align-items-center justify-content-around">
                   <div>
@@ -161,7 +166,8 @@
           <h3 class="m-0">We Offer a Full Range<br>of Digital Marketing Services!</h3>
           <div class="col-lg-7 col-xl-6 p-0">
             <p class="py-4 m-0 text-muted">A strong online presence is crucial for business success.</p>
-            <p class="font-weight-medium text-muted">Our digital marketing services are designed to help you navigate this dynamic environment and achieve your goals effectively.</p>
+            <p class="font-weight-medium text-muted">Our digital marketing services are designed to help you navigate
+              this dynamic environment and achieve your goals effectively.</p>
           </div>
         </div>
         <div class="col-12 col-lg-5 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
@@ -191,114 +197,151 @@
           <h6 class="section-subtitle text-muted m-0">We build our projects With Quality testing.</h6>
         </div>
         <div class="owl-carousel owl-theme grid-margin">
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face2.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/dusk/64/movie-projector.png" alt="movie-projector"/>
-                <p class="m-0 py-3 text-muted">A Beautyful Movie Streaming Website designed and Developed by our Web Devlopment Team.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Movie Streaming Website</h6>
-                <h6 class="customer-designation text-muted m-0">Web Development</h6>
+
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face2.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66" src="https://img.icons8.com/dusk/64/movie-projector.png"
+                    alt="movie-projector" />
+                  <p class="m-0 py-3 text-muted">A Beautyful Movie Streaming Website designed and Developed by our Web
+                    Devlopment Team.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Movie Streaming Website</h6>
+                  <h6 class="customer-designation text-muted m-0">Web Development</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face3.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/clouds/100/sedan.png" alt="sedan"/>
-                <p class="m-0 py-3 text-muted">Self Driving Car can be future, Using Artificial Neural Networ Algorithm we Created Self Driving Software.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Self Driving Automobile</h6>
-                <h6 class="customer-designation text-muted m-0">Machine Learning</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face3.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66" src="https://img.icons8.com/clouds/100/sedan.png" alt="sedan" />
+                  <p class="m-0 py-3 text-muted">Self Driving Car can be future, Using Artificial Neural Networ
+                    Algorithm
+                    we Created Self Driving Software.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Self Driving Automobile</h6>
+                  <h6 class="customer-designation text-muted m-0">Machine Learning</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face20.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/color/96/online--v1.png" alt="online--v1"/>
-                <p class="m-0 py-3 text-muted">Online Acadmic Exams are common nowadays and security and support are provided.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Online Exam System</h6>
-                <h6 class="customer-designation text-muted m-0">Web Devlopment</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face20.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66" src="https://img.icons8.com/color/96/online--v1.png" alt="online--v1" />
+                  <p class="m-0 py-3 text-muted">Online Acadmic Exams are common nowadays and security and support are
+                    provided.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Online Exam System</h6>
+                  <h6 class="customer-designation text-muted m-0">Web Devlopment</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face15.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/plasticine/100/warehouse-1.png" alt="warehouse-1"/>
-                <p class="m-0 py-3 text-muted">Fulfiling Huge and small Business need by managing their Stocks and Inventory .</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Inventory Management</h6>
-                <h6 class="customer-designation text-muted m-0">Python Devlopment</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face15.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66" src="https://img.icons8.com/plasticine/100/warehouse-1.png"
+                    alt="warehouse-1" />
+                  <p class="m-0 py-3 text-muted">Fulfiling Huge and small Business need by managing their Stocks and
+                    Inventory .</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Inventory Management</h6>
+                  <h6 class="customer-designation text-muted m-0">Python Devlopment</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face16.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/bubbles/100/car.png" alt="car"/>
-                <p class="m-0 py-3 text-muted">Machine Learning Model designed to Predict sales of cars based on previous year data.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Car Sales Model</h6>
-                <h6 class="customer-designation text-muted m-0">Machine Learning</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face16.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66" src="https://img.icons8.com/bubbles/100/car.png" alt="car" />
+                  <p class="m-0 py-3 text-muted">Machine Learning Model designed to Predict sales of cars based on
+                    previous year data.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Car Sales Model</h6>
+                  <h6 class="customer-designation text-muted m-0">Machine Learning</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face1.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9.png" alt="external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9"/>
-                <p class="m-0 py-3 text-muted">Food Delivery Web app developed in HTML and Bootstrap with Amazing CSS and java script integration.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Foodie India</h6>
-                <h6 class="customer-designation text-muted m-0">Web Devlopment</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face1.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66"
+                    src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9.png"
+                    alt="external-food-delivery-food-delivery-flaticons-lineal-color-flat-icons-9" />
+                  <p class="m-0 py-3 text-muted">Food Delivery Web app developed in HTML and Bootstrap with Amazing CSS
+                    and java script integration.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Foodie India</h6>
+                  <h6 class="customer-designation text-muted m-0">Web Devlopment</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face2.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/fluency/96/voice-id.png" alt="voice-id"/>
-                <p class="m-0 py-3 text-muted">Cutting-edge AI accurately converts spoken language into text with remarkable precision and speed.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Voice Recognition AI</h6>
-                <h6 class="customer-designation text-muted m-0">Python Project</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face2.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66" src="https://img.icons8.com/fluency/96/voice-id.png" alt="voice-id" />
+                  <p class="m-0 py-3 text-muted">Cutting-edge AI accurately converts spoken language into text with
+                    remarkable precision and speed.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Voice Recognition AI</h6>
+                  <h6 class="customer-designation text-muted m-0">Python Project</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="https://icons8.com/icon/mfKghnGVivdt/business-analyst" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/66/external-business-analyst-ecommerce-and-delivery-smashingstocks-outline-color-smashing-stocks.png" alt="external-business-analyst-ecommerce-and-delivery-smashingstocks-outline-color-smashing-stocks"/>
-                <p class="m-0 py-3 text-muted">Data-driven insights optimizing strategies for informed decisions, fostering growth and efficiency.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Business Analytics</h6>
-                <h6 class="customer-designation text-muted m-0">Machine Learning</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="https://icons8.com/icon/mfKghnGVivdt/business-analyst" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66"
+                    src="https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/66/external-business-analyst-ecommerce-and-delivery-smashingstocks-outline-color-smashing-stocks.png"
+                    alt="external-business-analyst-ecommerce-and-delivery-smashingstocks-outline-color-smashing-stocks" />
+                  <p class="m-0 py-3 text-muted">Data-driven insights optimizing strategies for informed decisions,
+                    fostering growth and efficiency.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Business Analytics</h6>
+                  <h6 class="customer-designation text-muted m-0">Machine Learning</h6>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card customer-cards">
-            <div class="card-body">
-              <div class="text-center">
-                <!-- <img src="images/face20.jpg" width="89" height="89" alt="" class="img-customer"> -->
-                <img width="66" height="66" src="https://img.icons8.com/fluency/96/organic-food.png" alt="organic-food"/>
-                <p class="m-0 py-3 text-muted">Optimizing cultivation through tech for efficient, sustainable, and profitable Agricultural Management.</p>
-                <div class="content-divider m-auto"></div>
-                <h6 class="card-title pt-3">Agricultural Management</h6>
-                <h6 class="customer-designation text-muted m-0">Web Devlopment</h6>
+          </a>
+          <a href="{{ url_for('project') }}">
+            <div class="card customer-cards">
+              <div class="card-body">
+                <div class="text-center">
+                  <!-- <img src="images/face20.jpg" width="89" height="89" alt="" class="img-customer"> -->
+                  <img width="66" height="66" src="https://img.icons8.com/fluency/96/organic-food.png"
+                    alt="organic-food" />
+                  <p class="m-0 py-3 text-muted">Optimizing cultivation through tech for efficient, sustainable, and
+                    profitable Agricultural Management.</p>
+                  <div class="content-divider m-auto"></div>
+                  <h6 class="card-title pt-3">Agricultural Management</h6>
+                  <h6 class="customer-designation text-muted m-0">Web Devlopment</h6>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
+          
         </div>
       </div>
     </section>
@@ -309,43 +352,12 @@
           <h4 class="pt-1" data-aos="fade-down">Contact us</h4>
         </div>
         <div data-aos="fade-up">
-          <a href="{{ url_for('contact') }}"><button class="btn btn-rounded btn-outline-danger">Contact us</button>
+          <a href="{{ url_for('contact') }}">
+            <button class="btn btn-rounded btn-outline-danger">Contact us</button>
+          </a>
         </div>
       </div>
     </section>
-    
-
-    <!-- Modal for Contact - us Button -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Contact Us</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="Name">Name</label>
-                <input type="text" class="form-control" id="Name" placeholder="Name">
-              </div>
-              <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="email" class="form-control" id="Email-1" placeholder="Email">
-              </div>
-              <div class="form-group">
-                <label for="Message">Message</label>
-                <textarea class="form-control" id="Message" placeholder="Enter your Message"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 {% endblock %}

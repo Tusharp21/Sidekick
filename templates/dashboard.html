@@ -8,5 +8,486 @@
 
 
 {% block body %}
-<div><a href=" {{ url_for('logout') }} ">Logout</a></div>
+
+<div class="content-wrapper">
+    <div class="container">
+        <!-- USER Description -->
+        <div class="row bg-dark text-xxl-center text-white pt-3">
+            <div class="col">
+                <h4 class="fw-bold">Profile Details</h4>
+            </div>
+            <div class="col">
+                Name : {{ session['username'] }}
+            </div>
+            <div class="col">
+                Phone : {{ session['phone'] }}
+            </div>
+            <div class="col">
+                Email : {{ session['email'] }}
+            </div>
+        </div>
+
+        <br>
+        <!-- USER Activity -->
+        <div class="">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-project-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-project" type="button" role="tab" aria-controls="pills-project"
+                        aria-selected="true">Projects</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-coueses-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-coueses" type="button" role="tab" aria-controls="pills-coueses"
+                        aria-selected="false">Coueses</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Payment
+                        History</button>
+                </li>
+                {% if session.get('internship_type'):%}
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-internship-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-internship" type="button" role="tab" aria-controls="pills-internship"
+                        aria-selected="false">Intern Dashboard</button>
+                </li>
+                {% endif %}
+            </ul>
+            <!-- Define content Below -->
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Put Brought Projects in Below div -->
+                <div class="tab-pane fade show active p-2" id="pills-project" role="tabpanel"
+                    aria-labelledby="pills-project-tab">
+                    <div class="row p-2">
+                        <div class="col p-0">
+                            <div class=" border border-3 border-dark rounded m-2 p-2" style="height: 100%;">
+                                <h4 class="fw-bold p-2">Your Projects</h4>
+                                <div class="text-center">
+                                    <img src="{{ url_for('static', filename='/Images/empty.jpg') }}"
+                                        style="width: 200px; height: auto;" alt="">
+                                    <p> Nothing here yet!!!</p]>
+                                        <a href="">
+                                            <p>Click Here to View Projects</p]>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col p-0">
+                            <div class="border border-3 border-dark rounded p-2 m-2" style="height: 100%;">
+                                <a class="text-center" href="{{ url_for('contact')}}"
+                                    style="width: 100%; height: 100%;">
+                                    <h4 class="fw-bold p-2 m-0">Order A New Project</h4>
+                                    <p class="m-0"
+                                        style="font-size: 7.8rem; font-family: 'Times New Roman', Times, serif;">
+                                        +</p>
+                                    <p>Click Here For Ordering A New Project</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="p-2 border border-3 border-dark rounded">
+                        <h4 class="fw-bold bg-dark text-white p-2"> _Available Projects</h4>
+                        <h2>Project List</h2>
+                        {% for file in files %}
+                        <a href="{{ url_for('payment_gateway', filename=file) }}">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{{url_for('static', filename='/Images/rar.jpg')}}"
+                                            class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ file }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <!-- Put Brought coueses in Below div -->
+                <div class="tab-pane fade" id="pills-coueses" role="tabpanel" aria-labelledby="pills-coueses-tab">
+                    <div class="">
+                        <h4 class="fw-bold p-4">Your Courses</h4>
+
+                        <div class="text-center">
+                            <img src="{{url_for('static', filename='/Images/cs.jpg')}}" style="  width: 100%;
+                                max-width: 600px;
+                                height: auto;">
+                        </div>
+                        <!-- <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical">
+                                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                                    aria-selected="true">HTML</button>
+                                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-profile" type="button" role="tab"
+                                    aria-controls="v-pills-profile" aria-selected="false">PYTHON</button>
+                                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-messages" type="button" role="tab"
+                                    aria-controls="v-pills-messages" aria-selected="false">C++</button>
+                                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-settings" type="button" role="tab"
+                                    aria-controls="v-pills-settings" aria-selected="false">JAVA</button>
+                            </div>
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                    aria-labelledby="v-pills-home-tab">
+                                    <div class="text-center">
+                                        <img src="{{url_for('static', filename='/Images/cs.jpg')}}" style="width: 600px; height: auto;">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                    aria-labelledby="v-pills-profile-tab">
+                                    <div class="text-center" style="width: 100%;">
+                                        <img src="{{url_for('static', filename='/Images/cs.jpg')}}" style="width: 600px; height: auto;">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                                    aria-labelledby="v-pills-messages-tab">
+                                    <div class="text-center">
+                                        <img src="{{url_for('static', filename='/Images/cs.jpg')}}" style="width: 600px; height: auto;">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                                    aria-labelledby="v-pills-settings-tab">
+                                    <div class="text-center">
+                                        <img src="{{url_for('static', filename='/Images/cs.jpg')}}" style="width: 600px; height: auto;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+                <!-- Put Transaction History in Below div -->
+
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <h4 class="fw-bold p-4">Payment History</h4>
+                    <div class="text-center">
+                        <img src="{{url_for('static', filename='/Images/emptybox.png')}}" style="  width: 100%;
+                        max-width: 600px;
+                        height: auto;">
+                        <br>
+                        <p class="pb-lg-5 fs-6">No Transactions Yet.</p>
+                    </div>
+                </div>
+
+                <!-- Transaction History end -->
+
+                {% if session['internship_type'] == 'webdevlopment' %}
+                <div class="tab-pane fade" id="pills-internship" role="tabpanel" aria-labelledby="pills-internship-tab">
+                    <h4 class="fw-bold p-4">Work Space</h4>
+
+                    <h2>{{ intern_final_msg }}</h2>
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingZero">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseZero" aria-expanded="false"
+                                    aria-controls="flush-collapseZero">
+                                    Base Task
+                                </button>
+                            </h2>
+                            <div id="flush-collapseZero" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingZero" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <h4 class="p-2 fw-bold">Creating a GitHub Account:</h4>
+                                    <br>
+                                    <ul>
+                                        <li>
+                                            Visit GitHub: Go to the GitHub website (github.com) in your web browser.
+                                        </li>
+                                        <li>
+                                            Sign Up: Click on the "Sign up" button.
+                                        </li>
+                                        <li>
+                                            Provide Details: Fill out the required information - username, email, and
+                                            password.
+                                            Choose a strong password.
+                                        </li>
+                                        <li>
+                                            Verify Email: Check your email for a verification message from GitHub and
+                                            click the
+                                            link to verify your email address.
+                                        </li>
+                                        <li>
+                                            Choose Plan: Select the Free plan for your GitHub account.
+                                        </li>
+                                        <li>
+                                            Complete Setup: Follow the on-screen prompts to complete your account setup.
+                                        </li>
+                                    </ul>
+                                    <h4 class="fw-bold p-2">Creating a Repository:</h4>
+                                    <ul>
+                                        <li>
+                                            Click +: In the upper-right corner, click on the "+" icon, and select "New
+                                            repository."
+                                        </li>
+                                        <li>
+                                            Repository Name: Enter "sidekick-internship" as the repository name.
+                                        </li>
+                                        <li>
+                                            Other Settings: You can leave other settings as default unless you have
+                                            specific
+                                            preferences.
+                                        </li>
+                                        <li>
+                                            Create Repository: Click the "Create repository" button.
+                                        </li>
+                                        <li>
+                                            Upload the Projects you create in Repository.
+                                        </li>
+                                    </ul>
+
+                                    <br>
+
+
+                                    <p class="fw-bold"> Congratulations! You've created a GitHub account, set up a
+                                        repository named "sidekick-internship," Now you can upload your projects and
+                                        share the repository link with Us.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Task #1
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <h4>Create a HTML Landing page</h4>
+                                    Create a Website Landing page using Html CSS JS and any other language you like and
+                                    could use. after creating a landing page upload it into your Github Repository and
+                                    copy the URL link and upload it
+                                    here.
+                                    <br>
+                                    <br>
+                                    <form target="{{ url_for('dashboard') }}" method="POST">
+                                        <input type="url" name="git_link" placeholder="Project Link">
+                                        <button class="text-center bg-dark text-white" type="submit">submit</button>
+                                    </form>
+                                    <br>
+                                    <p class="fw-bold bg-dark text-center text-white">{{ intern_msg }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    Task #2
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <h4>Create a TODO list web page</h4>
+                                    Create a Website TODO list using your prefered programming language as you are
+                                    comfortable and
+                                    could use. after creating a TODO page Upload it on github repository and copy
+                                    project url
+                                    here.
+                                    <br>
+                                    <br>
+                                    <form target="{{ url_for('dashboard') }}" method="POST">
+                                        <input type="url" name="git_link" placeholder="Project Link">
+                                        <input class="text-center bg-dark text-white" type="submit" value="submit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
+                                    Task #3
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <h4>Create a Clone of a Website</h4>
+                                    Create a Website Clone using your skills and any other language you like and
+                                    could use. after creating a Clone page upload it to github repository and upload the
+                                    link
+                                    here
+                                    <br>
+                                    <br>
+                                    <form target="{{ url_for('dashboard') }}" method="POST">
+                                        <input type="url" name="git_link" placeholder="Project Link">
+                                        <input class="text-center bg-dark text-white" type="submit" value="submit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    Task #4
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <h4>Create Login/Signup page</h4>
+                                    Create a Website for LOGIN and SIGNUP using Html CSS JS and any other language you
+                                    like and
+                                    could use. after completing your task make upload the project to your git repository
+                                    and upload url link
+                                    here
+                                    <br>
+                                    <br>
+                                    <form target="{{ url_for('dashboard') }}" method="POST">
+                                        <input type="url" name="git_link" placeholder="Project Link">
+                                        <input class="text-center bg-dark text-white" type="submit" value="submit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                    aria-controls="flush-collapseFive">
+                                    Reward
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+
+                                {% if not session.get('git_link'): %}
+                                <div class="accordion-body">
+
+                                    <h2 class="fw-bold p-5 text-center"> Complete Above Tasks To Unlock. </h2>
+
+                                </div>
+
+                                {% else: %}
+
+                                <div class="accordion-body">
+
+                                    <p class="p-2 fw-bold text-center">If you have Prepared any 1 task from above then
+                                        you are Eligible.</p>
+
+
+                                    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+                                        <div class="col">
+                                            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                                                <div class="card-header py-3 text-white bg-primary border-primary">
+                                                    <h4 class="my-0 fw-normal">Experience Certificate</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h1 class="card-title pricing-card-title">&#8377; 299<small
+                                                            class="text-muted fw-light"> -/Rs Only</small></h1>
+                                                    <ul class="list-unstyled mt-3 mb-4">
+                                                        <li>Completion Of any 1/4 Tasks</li>
+                                                        <li class="fw-bold">1 Month Experience Certificate</li>
+                                                        <li>upload Certifiacte On Linkedin and other social Site</li>
+                                                        <li>Create Github and store tasks in Github account</li>
+                                                    </ul>
+                                                    <form action="{{ url_for('payment_gateway') }}" method="POST">
+                                                        <input name="amount" value="299" hidden>
+                                                        <button type="submit" class="w-100 btn btn-lg btn-primary"> Pay
+                                                            Now
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                                                <div class="card-header py-3 text-white bg-primary border-primary">
+                                                    <h4 class="my-0 fw-normal">Experience Certificate</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h1 class="card-title pricing-card-title">&#8377; 399<small
+                                                            class="text-muted fw-light"> -/Rs Only</small></h1>
+                                                    <ul class="list-unstyled mt-3 mb-4">
+                                                        <li>Completion Of any 1/4 Tasks</li>
+                                                        <li class="fw-bold">2 Month Experience Certificate</li>
+                                                        <li>upload Certifiacte On Linkedin and other social Site</li>
+                                                        <li>Create Github and store tasks in Github account</li>
+                                                    </ul>
+                                                    <form action="{{ url_for('payment_gateway') }}" method="POST">
+                                                        <input name="amount" value="399" hidden>
+                                                        <button type="submit" class="w-100 btn btn-lg btn-primary"> Pay
+                                                            Now
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                                                <div class="card-header py-3 text-white bg-primary border-primary">
+                                                    <h4 class="my-0 fw-normal">Experience Certificate</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h1 class="card-title pricing-card-title">&#8377; 499<small
+                                                            class="text-muted fw-light"> -/Rs Only</small></h1>
+                                                    <ul class="list-unstyled mt-3 mb-4">
+                                                        <li>Completion Of any 1/4 Tasks</li>
+                                                        <li class="fw-bold">3 Month Experience Certificate</li>
+                                                        <li>upload Certifiacte On Linkedin and other social Site</li>
+                                                        <li>Create Github and store tasks in Github account</li>
+                                                    </ul>
+                                                    <form action="{{ url_for('payment_gateway') }}" method="POST">
+                                                        <input name="amount" value="499" hidden>
+                                                        <button type="submit" class="w-100 btn btn-lg btn-primary"> Pay
+                                                            Now
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    {% endif %}
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                {% elif session['internship_type'] == 'machinelearning' %}
+                <!-- Put Transaction History in Below div -->
+                <div class="tab-pane fade" id="pills-internship" role="tabpanel" aria-labelledby="pills-internship-tab">
+                    <h4 class="fw-bold p-4">Work Space</h4>
+
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

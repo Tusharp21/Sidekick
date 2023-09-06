@@ -19,7 +19,7 @@
     <br>
     <div class="h5 text-center">Login</div>
     <br>
-    <form action="{{ url_for('login') }}" method="post">
+    <form id="login" action="{{ url_for('login') }}" method="post">
       <div class="input-group mb-3">
         <input type="username" name="username" class="form-control" placeholder="Username" aria-label="Username">
       </div>
@@ -28,13 +28,19 @@
       </div>
       <br>
       <div class="d-grid gap-2">
-        <button class="btn btn-primary btn-lg" type="submit">Login</button>
+        <button class="btn btn-primary btn-lg" id="clearButton" type="submit">Login</button>
       </div>
       <br>
       <p class="bottom text-center">Don't have an account? <a class="bottom text-primary" href="{{url_for('register')}}"> Sign Up here</a></p>
       <br>
-      <div class="text-center">{{ msg }}</div>
+      <div class="text-center text-danger">{{ msg }}</div>
     </form>
+     <!-- JavaScript code to clear the form -->
+    <!-- <script>
+            document.getElementById("clearButton").addEventListener("click", function() {
+            document.getElementById("login").reset();
+        });
+    </script> -->
   </div>
 
 </div>

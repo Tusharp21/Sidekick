@@ -1,160 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static',filename='vendors/owl-carousel/css/owl.carousel.min.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static',filename='vendors/owl-carousel/css/owl.theme.default.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static',filename='vendors/mdi/css/materialdesignicons.min.css') }}"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static',filename='vendors/aos/css/aos.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static',filename='css/style.min.css') }}"
-    />
-    {% block head %} {% endblock %}
-  </head>
 
-  <body
-    id="body"
-    data-spy="scroll"
-    data-target=".navbar"
-    data-offset="100"
-    height="100vw"
-  >
-    <header id="header-section">
-      <nav
-        class="navbar navbar-expand-lg pl-3 pl-sm-0"
-        style="background-color: black; padding: 0; width: 100%"
-        id="navbar"
-      >
-        <div class="container">
-          {% comment %} home page links {% endcomment %}
-          <a href="{{ url_for('home') }}"
-            ><img
-              src="{{ url_for('static',filename='images/logo.png') }}"
-              alt=""
-              style="height: 60px"
-          /></a>
-          {% if session['loggedin'] == True: %}
-          <a class="nav-link text-white p-1" href="{{ url_for('dashboard') }}"
-            >Hi {{session.username}}</a
-          >
-          {% else %}
-          <div class="row end-100 text-center">
-            <div class="col">
-              <a class="nav-link text-white p-1" href="{{ url_for('login') }}"
-                >Login</a
-              >
-            </div>
-            <div class="col">
-              <a
-                class="nav-link text-white p-1"
-                href="{{ url_for('register') }}"
-                >Register</a
-              >
-            </div>
-          </div>
-          {% endif %}
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/owl-carousel/css/owl.carousel.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/owl-carousel/css/owl.theme.default.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/mdi/css/materialdesignicons.min.css') }}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/aos/css/aos.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.min.css') }}" />
+  {% block head %} {% endblock %}
+</head>
 
-    {% block body %} {% endblock %}
-    <div class="content-wrapper">
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100" height="100vw">
+  <header id="header-section">
+    <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" style="background-color: black; padding: 0; width: 100%"
+      id="navbar">
       <div class="container">
-        <section class="contact-details" id="contact-details-section">
-          <div class="row text-center text-md-left">
-            <div class="col-12 col-md-6 col-lg-3 grid-margin">
-              <img src="images/Group2.svg" alt="" class="pb-2" />
-              <div class="pt-2">
-                <p class="text-muted m-0">harshitsahu.hs66@gmail.com</p>
-                <p class="text-muted m-0">758-714-0713</p>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 grid-margin">
-              <h5 class="pb-2">Get in Touch</h5>
-              <p class="text-muted">
-                Don’t miss any updates of our new templates and extensions.!
-              </p>
-              <form>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="Email"
-                  placeholder="Email id"
-                />
-              </form>
-              <div class="pt-3">
-                <button class="btn btn-dark">Subscribe</button>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 grid-margin">
-              <h5 class="pb-2">Our Guidelines</h5>
-              <a href="#">
-                <p class="m-0 pb-2">Terms</p>
-              </a>
-              <a href="#">
-                <p class="m-0 pt-1 pb-2">Privacy policy</p>
-              </a>
-              <a href="#">
-                <p class="m-0 pt-1 pb-2">Cookie Policy</p>
-              </a>
-              <a href="#">
-                <p class="m-0 pt-1">Discover</p>
-              </a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 grid-margin">
-              <h5 class="pb-2">Our address</h5>
-              <p class="text-muted">
-                882 Ward 21<br />Titurdih Durg (CG) India
-              </p>
-              <div
-                class="d-flex justify-content-center justify-content-md-start"
-              >
-                <a href="#"><span class="mdi mdi-facebook"></span></a>
-                <a href="#"><span class="mdi mdi-twitter"></span></a>
-                <a href="#"><span class="mdi mdi-instagram"></span></a>
-                <a href="#"><span class="mdi mdi-linkedin"></span></a>
-              </div>
+        <!-- home page links -->
+        <a href="{{ url_for('home') }}"><img src="{{ url_for('static',filename='images/logo.png') }}" alt=""
+            style="height: 60px" /></a>
+        {% if session['loggedin'] == True: %}
+        <div class="row end-100 text-center">
+
+          <div class="dropdown">
+            <a href="{{ url_for('dashboard') }}" class=" nav-link text-white p-1 dropdown-toggle" type="button"
+              id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Hi {{session.username}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Dashboard</a></li>
+              <li><a class="dropdown-item" href=" {{ url_for('logout') }} ">Logout</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+          <!-- <div class="col">
+            <a class="nav-link text-white p-1" href="{{ url_for('dashboard') }}">Hi {{session.username}}</a>
+          </div> -->
+          <!-- <div class="col">
+            <div><a class="nav-link text-white p-1" href=" {{ url_for('logout') }} ">Logout</a></div>
+          </div> -->
+        </div>
+        {% else %}
+        <div class="row end-100 text-center">
+          <div class="col">
+            <a class="nav-link text-white p-1" href="{{ url_for('login') }}">Login</a>
+          </div>
+          <div class="col">
+            <a class="nav-link text-white p-1" href="{{ url_for('register') }}">Register</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+
+  {% block body %} {% endblock %}
+  <div class="content-wrapper">
+    <div class="container">
+      <section class="contact-details" id="contact-details-section">
+        <div class="row text-center text-md-left">
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <img src="images/Group2.svg" alt="" class="pb-2" />
+            <div class="pt-2">
+              <p class="text-muted m-0">harshitsahu.hs66@gmail.com</p>
+              <p class="text-muted m-0">758-714-0713</p>
             </div>
           </div>
-        </section>
-      </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2">Get in Touch</h5>
+            <p class="text-muted">
+              Don’t miss any updates of our new templates and extensions.!
+            </p>
+            <form>
+              <input type="text" class="form-control" id="Email" placeholder="Email id" />
+            </form>
+            <div class="pt-3">
+              <button class="btn btn-dark">Subscribe</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2">Our Guidelines</h5>
+            <a href="#">
+              <p class="m-0 pb-2">Terms</p>
+            </a>
+            <a href="#">
+              <p class="m-0 pt-1 pb-2">Privacy policy</p>
+            </a>
+            <a href="#">
+              <p class="m-0 pt-1 pb-2">Cookie Policy</p>
+            </a>
+            <a href="{{ url_for('internship')}}">
+              <p class="m-0 pt-1">Internship Program</p>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2">Our address</h5>
+            <p class="text-muted">
+              882 Ward 21<br />Titurdih Durg (CG) India
+            </p>
+            <div class="d-flex justify-content-center justify-content-md-start">
+              <a href="#"><span class="mdi mdi-facebook"></span></a>
+              <a href="#"><span class="mdi mdi-twitter"></span></a>
+              <a href="#"><span class="mdi mdi-instagram"></span></a>
+              <a href="#"><span class="mdi mdi-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <footer class="border-top">
-      <p class="text-center text-muted pt-4">
-        Copyright © 2023<a href="" class="px-1">Sidekick</a>All rights reserved.
-      </p>
-    </footer>
+  </div>
+  <footer class="border-top">
+    <p class="text-center text-muted pt-4">
+      Copyright © 2023<a href="" class="px-1">Sidekick</a>All rights reserved.
+    </p>
+  </footer>
 
-    <script src="{{ url_for('static',filename='vendors/jquery/jquery.min.js') }}"></script>
-    <!-- <script src="{{ url_for('static',filename='vendors/bootstrap/bootstrap.min.js') }}"></script> -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="{{ url_for('static',filename='vendors/owl-carousel/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ url_for('static',filename='vendors/aos/js/aos.js') }}"></script>
-    <script src="{{ url_for('static',filename='js/landingpage.js') }}"></script>
-  </body>
+  <script src="{{ url_for('static',filename='vendors/jquery/jquery.min.js') }}"></script>
+  <!-- <script src="{{ url_for('static',filename='vendors/bootstrap/bootstrap.min.js') }}"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="{{ url_for('static',filename='vendors/owl-carousel/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/aos/js/aos.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/landingpage.js') }}"></script>
+</body>
+
 </html>
