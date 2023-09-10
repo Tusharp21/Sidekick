@@ -8,45 +8,93 @@
 
 
 {% block body %}
-<form action="{{ url_for('register') }}" method="POST">
-    <div class="row">
-        <div class="col-6 d-none d-lg-block p-3">
-            <h2 class="text-center"><span class="fw-bold">Welcome</span> to Sidekick</h2>
-            <img src="{{ url_for('static', filename='/Images/login.jpg') }}"
-                style="width: 100%; height: auto; object-fit: fill;">
-        </div>
-        <div class="col p-3">
-            <br>
-            <div class="h3 text-center">Register</div>
-            <br>
-            <div class="input-group mb-3">
-                <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username">
+<div class="container-fluid">
+    <form action="{{ url_for('register') }}" method="POST">
+        <div class="row">
+            <div class="col-6 d-none d-lg-block p-3">
+                <h2 class="text-center"><span class="fw-bold">Welcome</span> to Sidekick</h2>
+                <img src="{{ url_for('static', filename='/Images/login.jpg') }}"
+                    style="width: 100%; height: auto; object-fit: fill;">
             </div>
-            <div class="input-group mb-3">
-                <input type="password" name="password" class="form-control" placeholder="Password"
-                    aria-label="password">
+            <div class="col-12 d-block d-lg-none p-3 w-100 text-center">
+                <h2 class="text-center"><span class="fw-bold">Welcome</span> to Sidekick</h2>
+                <img src="{{url_for('static', filename='/Images/Mobile login.gif')}}"
+                    style="width: 50%; height: auto; object-fit: fill;">
+                    
             </div>
-            <div class="input-group mb-3">
-                <input type="email" name="email" class="form-control" placeholder="E-mail ID" aria-label="E-mail ID">
-            </div>
-            <div class="input-group mb-3">
-                <input type="text" name="fname" class="form-control" placeholder="First Name" aria-label="First Name">
+            <div class="col p-3">
+                <br>
+                <div class="h3 text-center">Register</div>
+                <br>
+                <div class="input-group mb-3">
+                    <input type="text" name="username" class="form-control" placeholder="Username"
+                        aria-label="Username">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Password"
+                        aria-label="password">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="E-mail ID"
+                        aria-label="E-mail ID">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="fname" class="form-control" placeholder="First Name"
+                        aria-label="First Name">
 
-                <input type="text" name="lname" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                    <input type="text" name="lname" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Numeber"
+                        aria-label="Phone Numeber" pattern="[0-9]{10}" required>
+
+                    <a href=""><button onclick="sendOTP()" class="bg-dark btn btn-primary"> sendOTP </button></a>
+                </div>
+                <div id="otpSection" class="text-center" style="display: none;">
+                    <div class="input-group mb-3">
+                        <input type="tel" id="otp" class="form-control" placeholder="Enter OTP" aria-label="Enter OTP"
+                            pattern="[0-9]{6}" required>
+                    </div>
+                    <button onclick="verify_OTP()" class="bg-dark btn btn-primary ">Verify OTP</button>
+                </div>
+                <div id="otpStatus" class="text-center h5 pt-lg-4"></div>
+
+                <br>
+                <p class="bottom text-center">Already have an account? <a class="bottom text-primary"
+                        href="{{url_for('login')}}"> Sign In here</a></p>
+                <br>
+                <div class="d-grid gap-2 col-6 mx-auto p-0">
+                    <button type="submit" class="btn btn-primary">Proceed</button>
+                </div>
+                <br>
+                <div class="text-center text-danger">{{ msg }}</div>
             </div>
-            <div class="input-group mb-3">
-                <input type="tel" name="phone" class="form-control" placeholder="Phone Numeber"
-                    aria-label="Phone Numeber" pattern="[0-9]{10}" required>
-            </div>
-            <br>
-            <p class="bottom text-center">Already have an account?  <a class="bottom text-primary" href="{{url_for('login')}}"> Sign In here</a></p>
-            <br>
-            <div class="d-grid gap-2 col-6 mx-auto p-0">
-                <button type="submit" class="btn btn-primary">Proceed</button>
-            </div>
-            <br>
-            <div class="text-center text-danger">{{ msg }}</div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
+
+<script>
+    function sendOTP() {
+        // Generate and send OTP to the user's phone number (you'll need a server for this).
+        // You can use services like Twilio or a custom backend to send SMS or generate OTPs.
+        // Once sent, display the OTP entry form.
+        document.getElementById('otpSection').style.display = 'block';
+        alert('{{ otp }}')
+    }
+
+    function verify_OTP() {
+        // Get the entered OTP from the input field.
+        const enteredOTP = document.getElementById('otp').value;
+
+        // Validate the entered OTP (you'll need to compare it with the OTP sent to the user).
+        // You can do this on the server-side to ensure security.
+
+        // For this example, we'll just check if it's a static OTP.
+        if (enteredOTP === '{{ otp }}') {
+            document.getElementById('otpStatus').textContent = 'OTP Verified!';
+        } else {
+            document.getElementById('otpStatus').textContent = 'Invalid OTP. Please try again.';
+        }
+    }
+</script>
 {% endblock %}

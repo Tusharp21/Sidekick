@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Verify OTP</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid row">
+
+    <div class="col-6 d-none d-lg-block p-3">
+        <h2 class="text-center"><span class="fw-bold">Welcome</span> to Sidekick</h2>
+        <img src="{{url_for('static', filename='/Images/login.jpg')}}"
+            style="width: 100%; height: auto; object-fit: fill;">
+    </div>
+
+    <div class="col p-3">
+
+        <div class="h2 text-center">Login</div>
+        <br>
+        <br>
+        <form method="POST">
+            <h1>Verify OTP</h1>
+            <p>Enter the OTP sent to {{ phone_number }}</p>
+            <div class="input-group mb-3">
+                <input type="tel" name="otp" class="form-control" placeholder="OTP"
+                    aria-label="OTP" pattern="[0-9]{6}" required>
+
+            </div>
+            <br>
+            <button type="submit" class="bg-dark btn btn-primary text-center"> Verify and Login </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
