@@ -28,7 +28,7 @@
                 <br>
                 <div class="input-group mb-3">
                     <input type="text" name="username" class="form-control" placeholder="Username"
-                        aria-label="Username">
+                        aria-label="Username" required pattern="[a-zA-Z0-9]">
                 </div>
                 <div class="input-group mb-3">
                     <input type="password" name="password" class="form-control" placeholder="Password"
@@ -45,8 +45,8 @@
                     <input type="text" name="lname" class="form-control" placeholder="Last Name" aria-label="Last Name">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="tel" name="phone" class="form-control" placeholder="Phone Numeber"
-                        aria-label="Phone Numeber" pattern="[0-9]{10}" required>
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number"
+                        aria-label="Phone Number" pattern="[0-9]{10}" required>
 
                     <a href=""><button onclick="sendOTP()" class="bg-dark btn btn-primary"> sendOTP </button></a>
                 </div>

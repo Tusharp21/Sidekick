@@ -327,7 +327,7 @@ def send_otp():
         session['phone'] = request.form.get('phone_number')
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute("SELECT * FROM accounts WHERE phone = % s",(phone_number, ),)
+        cursor.execute("SELECT phone FROM accounts WHERE phone = % s",(phone_number, ),)
         phone = cursor.fetchone()
         
         if phone:
@@ -354,7 +354,7 @@ def send_otp():
             
             if data['return'] == True:
                 flash('OTP sent successfully!', 'success')
-                return redirect(url_for('verify_otp', phone_number=phone_number, otp=otp))
+                return redirect(url_for('verify_otp'))
             else:
                 flash('Failed to send OTP. Please try again.', 'error')
                 return redirect(url_for('home'))
@@ -366,7 +366,7 @@ def send_otp():
         session["email"] = request.form["email"]
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute("SELECT * FROM accounts WHERE email = % s",(email, ),)
+        cursor.execute("SELECT email FROM accounts WHERE email = % s",(email, ),)
         email = cursor.fetchone()
         if email:
             otp = generate_otp()

@@ -2468,8 +2468,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-dark:hover {
-  color: #fff;
-  background-color: #0e0c0c;
+  color: black;
+  background-color: #ffffff;
   border-color: #070606;
 }
 
@@ -10029,8 +10029,8 @@ footer a:hover {
 
 .btn-dark:hover {
   background: transparent;
-  color: #221e1e;
-  border: 1px solid #221e1e;
+  color: #000;
+  border: 1px solid #000;
 }
 
 .btn-opacity-primary {
@@ -10229,7 +10229,7 @@ footer a:hover {
 }
 
 .btn-outline-dark:hover {
-  color: white;
+  color: black;
   background-color: #221e1e;
 }
 

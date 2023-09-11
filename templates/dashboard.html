@@ -10,7 +10,7 @@
 {% block body %}
 
 <div class="content-wrapper">
-    <div class="container">
+    <div class="container-xxl">
         <!-- USER Description -->
         <div class="row bg-dark text-xxl-center text-white pt-3">
             <div class="col">
@@ -89,8 +89,8 @@
                     </div>
                     <br>
                     <div class="p-2 border border-3 border-dark rounded">
-                        <h4 class="fw-bold bg-dark text-white p-2"> _Available Projects</h4>
-                        <h2>Project List</h2>
+                        <h4 class="fw-bold bg-dark text-white p-2"> Completed Projects</h4>
+                        <h4 class="fw-bold p-2">Project List</h4>
                         {% for file in files %}
                         <a href="{{ url_for('payment_gateway', filename=file) }}">
                             <div class="card mb-3" style="max-width: 540px;">

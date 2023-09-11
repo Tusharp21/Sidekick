@@ -10,16 +10,16 @@
 
 <section class="container-fluid">
     <div>
-        <p class="h2 text-center pt-4"> OUR COURCES</p>
-        <div class="card">
+        <p class="h2 text-center pt-4 fw-bold"> OUR COURCES</p>
+        <!-- <div class="card">
             <div class="card-body">
                 {% for i in range(20)|batch(5) %}
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active bg-dark m-3">
                             <div class="row">
-                                {% for course in courses %}
                                 <div class="col">
+                                    {% for course in courses %}
                                     <div class="card border-3 border border-dark rounded m-lg-2" style="width: 18rem;">
                                         <img src="{{ course['course_img'] }}" class="bg-danger card-img-top"
                                             style="height: 100px; width: auto;" alt="Course Image">
@@ -30,8 +30,8 @@
                                             <p class="card-text">Class: {{ course['course_class'] }}</p>
                                         </div>
                                     </div>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,8 @@
                 </div>
                 {% endfor %}
             </div>
-        </div>
+        </div> -->
+        
 
     </div>
 </section>
