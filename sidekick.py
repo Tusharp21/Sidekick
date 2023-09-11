@@ -52,6 +52,11 @@ def generate_otp():
 # which URL is associated function
 
 
+@app.route("/")
+def home():
+    return render_template("Home.html")
+
+
 @app.route("/test")
 def test():
     email = "anythingworksaslonasitwork@gmail.com"
@@ -70,11 +75,6 @@ def test():
         flash(error_message)
         return "message not sent" + error_message
     # return render_template('test.html')
-
-
-@app.route("/")
-def home():
-    return render_template("Home.html")
 
 
 @app.route("/course")
